@@ -1,69 +1,94 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <title>Valentine</title> 
-    <style> 
-        body { 
-            font-family: Arial, sans-serif; 
-            background-color: #f7f7f7; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0; 
-        } 
- 
-        .card { 
-            background: white; 
-            padding: 20px; 
-            border-radius: 12px; 
-            text-align: center; 
-            width: 300px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-        } 
- 
-        .card img { 
-            width: 100%; 
-            border-radius: 10px; 
-            margin-bottom: 15px; 
-        } 
- 
-        .question { 
-            font-size: 18px; 
-            margin-bottom: 15px; 
-        } 
- 
-        .buttons button { 
-            padding: 8px 16px; 
-            margin: 0 10px; 
-            font-size: 16px; 
-            border: none; 
-            border-radius: 6px; 
-            cursor: pointer; 
-            transition: transform 0.3s ease; 
-        } 
- 
-        .yes { 
-            background-color: #ff4d6d; 
-            color: white; 
-        } 
- 
-        .no { 
-            background-color: #ccc; 
-        } 
-    </style> 
-</head> 
-<body> 
- 
-    <div class="card"> 
-        <img src="minion.jpeg" alt="Minion"> 
-        <div class="question">Will you be my valentine?</div> 
-        <div class="buttons"> 
-            <button class="yes">Yes</button> 
-            <button class="no">No</button> 
-        </div> 
-    </div> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 16px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            width: 100%;
+            max-width: 360px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 14px;
+            margin-bottom: 16px;
+        }
+
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .buttons button {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            min-width: 120px;
+            transition: transform 0.3s ease;
+        }
+
+        .yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        .no {
+            background-color: #e0e0e0;
+        }
+
+        @media (max-width: 400px) {
+            .question {
+                font-size: 18px;
+            }
+
+            .buttons button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="minion.jpeg" alt="Minion">
+        <div class="question">Will you be my valentine?</div>
+        <div class="buttons">
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
+        </div>
+    </div>
 
     <script>
         const yesBtn = document.querySelector('.yes');
@@ -72,10 +97,10 @@
         let scale = 1;
 
         noBtn.addEventListener('click', () => {
-            scale += 0.2; // increase size each click
+            scale += 0.2;
             yesBtn.style.transform = `scale(${scale})`;
         });
     </script>
- 
-</body> 
+
+</body>
 </html>
